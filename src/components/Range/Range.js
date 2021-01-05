@@ -151,7 +151,6 @@ const Range = ({
                             if (event.target.value < parseInt(currentRef.current.textContent) && event.target.value >= min && event.target.value <= max)
                                 value = parseInt(event.target.value);
 
-                            debugger;
                             handleMinUpdate(value, value);
                             onChangeMin(event.target.value);
 
