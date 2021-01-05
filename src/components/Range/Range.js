@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from 'react';
 import { Input } from "@chakra-ui/react";
 import './styles.css';
@@ -125,11 +126,11 @@ const Range = ({
 
     React.useLayoutEffect(() => {
         handleUpdate(max, initialPercentage);
-    }, [handleUpdate, max, initialPercentage]);
+    }, []);
 
     React.useLayoutEffect(() => {
         handleMinUpdate(min, minInitialPercentage);
-    }, [handleMinUpdate, min, minInitialPercentage]);
+    }, []);
 
     return (
         <>
@@ -150,6 +151,7 @@ const Range = ({
                             if (event.target.value < parseInt(currentRef.current.textContent) && event.target.value >= min && event.target.value <= max)
                                 value = parseInt(event.target.value);
 
+                            debugger;
                             handleMinUpdate(value, value);
                             onChangeMin(event.target.value);
 
